@@ -27,7 +27,7 @@ while u == 0:
         yt = list(x)
         fg = len(x)
         d=0
-        y = open('Cyphertext.txt','w')
+        y = open('RSAC.txt','w')
         for k in range(fg):
             try:
                 XY = ord(yt[d])** b %n
@@ -37,29 +37,32 @@ while u == 0:
                 print('ERROR 1: ENCRYPT_ONLY_LETTERS')
                 x = 0
                 XY = 0
-            y.write(str(XY)+ '  ')
+            y.write(str(XY)+ ' ')
             d = d+1
         y.close()
-        e = open('Cyphertext.txt','r')
+        e = open('RSAC.txt','r')
         print(e.read())
         e.close()
     if I == '2':
         print("---------Decryption-----------")
         print()
-        
+        print('Ciphertext: ')
         hh = ''
+        u = open('RSAP.txt','w')
         while hh != 'done':
             try:
-                y = input("Ciphertext: ")
+                y = input()
                 if y == 'done':
                     hh = 'done'
-                YX = int(y)**a %n
-                print(chr(YX))
+                if y != 'done':
+                    YX = int(y)**a %n
+                    print(chr(YX))
                 #chr(YX) gives the letter of the keyboard number YX
             except:
-                print('ERROR 2: DECRYPT_ONLY_NUMBERS')
+                print('ERROR 2: DECRYPT_ONLY_ONE_NUMBER')
                 y = 0
                 YX = 0
+        u.close()
     if I != '1' and I != '2':
         print("ERROR 3: ONLY CHOOSE 1,2")
     r = input()
