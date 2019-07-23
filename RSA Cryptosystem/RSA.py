@@ -2,7 +2,7 @@
 # -*- Created by Vance and Ian
 # -*- https://github.com/Cult-of-Nerds
 # -*- https://www.youtube.com/channel/UCCxkqK3cD49RXKsMSLGrppQ
-# -*- This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
+# -*- This work is licensed under the GNU General Public License v3.0
 #*********
 #RSA Encryptor
 p = 7793
@@ -13,7 +13,8 @@ a = 56137
 u = 0
 I = 0
 d = 0
-yu = 0
+y = 0
+
 while u == 0:
     print('Cryptography Presentation RSA Cipher Program')
     print()
@@ -26,11 +27,12 @@ while u == 0:
         yt = list(x)
         fg = len(x)
         d=0
-        y = open('RSA.txt','w')
+        y = open('Cyphertext.txt','w')
         for k in range(fg):
             try:
                 XY = ord(yt[d])** b %n
-                #ord(XY) is the keyboard number for x 
+                #ord(XY) gives the keyboard number for XY
+                
             except:
                 print('ERROR 1: ENCRYPT_ONLY_LETTERS')
                 x = 0
@@ -38,21 +40,26 @@ while u == 0:
             y.write(str(XY)+ '  ')
             d = d+1
         y.close()
-        e = open('RSA.txt','r')
+        e = open('Cyphertext.txt','r')
         print(e.read())
         e.close()
     if I == '2':
         print("---------Decryption-----------")
         print()
-        y = input("Ciphertext: ")
-        try:
-            YX = int(y)**a %n
-            print(chr(YX))
-            #chr(YX) gives is the letter of a keyboard number YX
-        except:
-            print('ERROR 2: DECRYPT_ONLY_NUMBERS')
-            y = 0
-            YX = 0
+        
+        hh = ''
+        while hh != 'done':
+            try:
+                y = input("Ciphertext: ")
+                if y == 'done':
+                    hh = 'done'
+                YX = int(y)**a %n
+                print(chr(YX))
+                #chr(YX) gives the letter of the keyboard number YX
+            except:
+                print('ERROR 2: DECRYPT_ONLY_NUMBERS')
+                y = 0
+                YX = 0
     if I != '1' and I != '2':
         print("ERROR 3: ONLY CHOOSE 1,2")
     r = input()
