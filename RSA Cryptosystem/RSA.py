@@ -1,3 +1,9 @@
+#*********
+# -*- Created by Vance and Ian
+# -*- https://github.com/Cult-of-Nerds
+# -*- https://www.youtube.com/channel/UCCxkqK3cD49RXKsMSLGrppQ
+# -*- This work is licensed under the GNU General Public License v3.0
+#*********
 #RSA Encryptor
 p = 7793
 q = 7789
